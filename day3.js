@@ -10,45 +10,18 @@ directions.forEach((num) => {
 		y += 1;
 		} else if (num == 'v') {
 		y -= 1;
-	} else if (num == '>') {
+		} else if (num == '>') {
 		x += 1;
-	} else if (num == '<') {
+		} else if (num == '<') {
 		x -= 1;
-	} 
-	coordinates.push([x, y]);
+		} 
+	coordinates.push(`${x} & ${y}`);
 })
 
-//now loop thru array of arrays to compare for duplicates.
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
 
-const double = [];
-const newArray = array.forEach((num) => {
-	double.push(num * 2);
-})
+const unique = coordinates.filter( onlyUnique );
+console.log(unique.length);
 
-//if > +1 x-axis, push (coordinates)set to (coordinates)list, if (coordinates)set(x, y) matches a ++1
-//if < -1 x-axis, push (coordinates)set to (coordinates)list, if (coordinates)set(x, y) matches a --1
-//if ^ +1 y-axis, push (coordinates)set to (coordinates)list, if (coordinates)set(x, y) matches a ++1
-//if v -1 y-axis, push (coordinates)set to (coordinates)list, if (coordinates)set(x, y) matches a --1
-
-const n = ^; //+1 x-axis
-const s = v; //-1 x-axis
-const e = >; //+1 y-axis
-const w = <; //-1 y-axis
-
-//An array of arrays? a equals an incrementor[[x, y, a], [x, y, a]]
-//maybe if I push each coordinate set to an array and have a check for repeats???
-//if set != list push set to list
-
-//gets an ending coordinate
-// for (let i = 0; i < directions.length; i++) {
-// 	if (directions[i] == '^') {
-// 		y += 1;
-// 		} else if (directions[i] == 'v') {
-// 		y -= 1;
-// 	} else if (directions[i] == '>') {
-// 		x += 1;
-// 	} else if (directions[i] == '<') {
-// 		x -= 1;
-// 	} 
-// }
-// console.log(x, y);
